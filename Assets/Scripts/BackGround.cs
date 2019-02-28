@@ -1,7 +1,7 @@
-﻿// Unity3D C¤ script to manage background prefabs
+﻿// Unity3D C# script to manage background prefabs
 // Author: Juha Liias
 
-// These are not needed at the moment
+// Next two lines are not needed at the moment
 //using System.Collections;
 //using System.Collections.Generic;
 using UnityEngine;
