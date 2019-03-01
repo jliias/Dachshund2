@@ -6,7 +6,7 @@
 //using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera : MonoBehaviour {
+public class MainCamera : MonoBehaviour {
 
     // GameObject for camera target
     public GameObject target;
