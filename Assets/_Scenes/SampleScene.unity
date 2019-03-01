@@ -210,6 +210,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1351408343804500, guid: 13a1b2396e617b845acd99778e28931e,
     type: 2}
   m_PrefabInternal: {fileID: 1949245332}
+--- !u!114 &298477072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 298477071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3106dd2f700f5584e985923faf3402cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myProjectile: {fileID: 1848097193914506, guid: 73412a7b7bc38b24e8c3b9b4a59ef80c,
+    type: 2}
+  intervalTime: 0.3
+  speed: 10
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +258,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc4974eea70f94640855c5bc5aa15c9c, type: 3}
+  m_Script: {fileID: 11500000, guid: b5483ea271fdbf64aabc6cdb3a0a66ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 298477071}
@@ -376,7 +391,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1364936936}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3106dd2f700f5584e985923faf3402cd, type: 3}
   m_Name: 
@@ -384,6 +399,7 @@ MonoBehaviour:
   myProjectile: {fileID: 1848097193914506, guid: 73412a7b7bc38b24e8c3b9b4a59ef80c,
     type: 2}
   intervalTime: 0.3
+  speed: 10
 --- !u!1 &1459223938
 GameObject:
   m_ObjectHideFlags: 0

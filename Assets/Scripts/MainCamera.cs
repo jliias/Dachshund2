@@ -14,11 +14,6 @@ public class MainCamera : MonoBehaviour {
     // ToDo: remove start(), if no use
 	// Use this for initialization
 	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
         // Follow target. This might also be redundant since player
         // is not moving in this project (at the moment).
         Vector3 targetPos = target.transform.position;
@@ -26,5 +21,10 @@ public class MainCamera : MonoBehaviour {
         targetPos.y = 0f;
         targetPos.z = -10f;
         this.transform.position = targetPos;
+    }
+	
+	// Update is called once per frame
+	void Update () {
+
 	}
 }
