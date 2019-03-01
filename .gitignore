@@ -57,6 +57,8 @@ crashlytics-build.properties
 
 # Own additions (JuhaL):
 [Aa]ssets/[Ss]prites
+[Aa]ssets/[Mm]usic
+[Aa]ssets/[Pp]refabs
 
 
 # End of https://www.gitignore.io/api/unity

@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4707437804613278}
+  - component: {fileID: 114867752622243208}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -36,6 +37,7 @@ GameObject:
   - component: {fileID: 4081621774728744}
   - component: {fileID: 212219306264325030}
   - component: {fileID: 95175109268235766}
+  - component: {fileID: 114454790193824534}
   m_Layer: 0
   m_Name: pasi
   m_TagString: Untagged
@@ -65,8 +67,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1620521229915774}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.4705434, y: 1.3051335, z: 0.5269177}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4817966670586328}
@@ -80,7 +82,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1351408343804500}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.170605, y: -0.19513345, z: -0.5269177}
+  m_LocalPosition: {x: -90, y: 1.41, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4081621774728744}
@@ -118,6 +120,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114454790193824534
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1620521229915774}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3106dd2f700f5584e985923faf3402cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myProjectile: {fileID: 1848097193914506, guid: 73412a7b7bc38b24e8c3b9b4a59ef80c,
+    type: 2}
+  intervalTime: 0.3
+  speed: 10
+--- !u!114 &114867752622243208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1351408343804500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3106dd2f700f5584e985923faf3402cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myProjectile: {fileID: 1848097193914506, guid: 73412a7b7bc38b24e8c3b9b4a59ef80c,
+    type: 2}
+  intervalTime: 0.3
+  speed: 10
 --- !u!212 &212219306264325030
 SpriteRenderer:
   m_ObjectHideFlags: 1
