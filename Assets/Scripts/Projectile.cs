@@ -35,4 +35,9 @@ public class Projectile : MonoBehaviour {
         Destroy(this.gameObject);
         yield return null;
     }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        Destroy(this.gameObject);
+    }
 }
