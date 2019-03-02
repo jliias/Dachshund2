@@ -5,8 +5,9 @@ using UnityEngine;
 public class Laskisarvinen : MonoBehaviour
 {
 
-    private Animator anim;
+    public GameObject hitParticle;
 
+    private Animator anim;
 
     // Use this for initialization
     void Start()
@@ -29,6 +30,7 @@ public class Laskisarvinen : MonoBehaviour
         }
         Debug.Log("Hit On!");
         anim.SetBool("isHit", true);
+        Instantiate(hitParticle, this.transform);
         StartCoroutine("BackToDefaultAnim");
     }
 
