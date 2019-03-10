@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿// Unity3D C# script for controlling one of the enemies
+// Author: Juha Liias
+//
+// Known issues:
+// This is more or less for testing at the moment. No real
+// game logic yet here. Also, comments to be added. 
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
