@@ -28,7 +28,7 @@ public class Laskisarvinen : MonoBehaviour
         {
             return;
         }
-        Debug.Log("Hit On!");
+        //Debug.Log("Hit On!");
         anim.SetBool("isHit", true);
         Instantiate(hitParticle, this.transform);
         StartCoroutine("BackToDefaultAnim");
@@ -39,7 +39,7 @@ public class Laskisarvinen : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         anim.SetBool("isHit", false);
-        Debug.Log("Hit Off!");
+        //Debug.Log("Hit Off!");
 
     }
 }
