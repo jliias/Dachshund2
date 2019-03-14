@@ -16,6 +16,8 @@ public class Laskisarvinen : MonoBehaviour
 
     private Animator anim;
 
+    private float speed = 5f;
+
     // Use this for initialization
     void Start()
     {
@@ -26,7 +28,17 @@ public class Laskisarvinen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Vector2 currentPos = this.transform.position;
+        if (currentPos.x < -100f)
+        {
+            currentPos.x = -70f;
+            currentPos.y = Random.Range(-1f, 3f);
+            speed = Random.Range(5f, 10f);
+        }
+        else {
+            currentPos.x = currentPos.x - Time.deltaTime * speed;
+        }
+        this.transform.position = currentPos;
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
