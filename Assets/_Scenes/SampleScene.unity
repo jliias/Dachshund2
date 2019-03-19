@@ -907,7 +907,7 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 662065928}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7440394a74ef8474993afb9063f0ef5f, type: 3}
@@ -1881,6 +1881,7 @@ MonoBehaviour:
   speed: 10
   circle: {fileID: 1132996496}
   outerCircle: {fileID: 197990173}
+  myCamera: {fileID: 519420031}
 --- !u!4 &1816154047
 Transform:
   m_ObjectHideFlags: 0
@@ -2009,6 +2010,19 @@ Prefab:
     - target: {fileID: 4707437804613278, guid: 13a1b2396e617b845acd99778e28931e, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707437804613278, guid: 13a1b2396e617b845acd99778e28931e, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707437804613278, guid: 13a1b2396e617b845acd99778e28931e, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 114867752622243208, guid: 13a1b2396e617b845acd99778e28931e,
+        type: 2}
+      propertyPath: intervalTime
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13a1b2396e617b845acd99778e28931e, type: 2}
