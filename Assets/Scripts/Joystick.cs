@@ -16,6 +16,7 @@ public class Joystick : MonoBehaviour
     private bool touchStart = false;
     private Vector2 pointA;
     private Vector2 pointB;
+    public float deadZoneRadius = 0.1f;
 
     // circles to build a joystick object
     public Transform circle;
@@ -52,10 +53,49 @@ public class Joystick : MonoBehaviour
     {
         if (touchStart)
         {
+            // Calculate offset between touch start and current position
             Vector2 offset = pointB - pointA;
-            Vector2 direction = Vector2.ClampMagnitude(offset, 1.0f);
+            Debug.Log("offset: " + offset);
+
+            // "Analog" control
+            //Vector2 direction = Vector2.ClampMagnitude(offset, 1.0f);
+            
+            // Try "digital" joystick instead
+            // Current implementation limits movement to 45 degrees "slices"
+            Vector2 direction;
+            if (offset.x < -deadZoneRadius)
+            {
+                direction.x = -1f;
+            }
+            else if (offset.x > deadZoneRadius)
+            {
+                direction.x = 1f;
+            }
+            else {
+                direction.x = 0f;
+            }
+
+            if (offset.y < -deadZoneRadius)
+            {
+                direction.y = -1f;
+            }
+            else if (offset.y > deadZoneRadius)
+            {
+                direction.y = 1f;
+            }
+            else
+            {
+                direction.y = 0f;
+            }
+
+            // Clamp movement vector length to 1.0f
+            direction = Vector2.ClampMagnitude(direction, 1.0f);
+
+            Debug.Log("direction: " + direction);
+
             moveCharacter(direction * 1.5f);
 
+            // Move inner circle to new position
             circle.transform.position = new Vector2(pointA.x + direction.x, pointA.y + direction.y) * 1;
         }
         else
