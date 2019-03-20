@@ -565,7 +565,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4bac7edcc53f62a4d8d12c6cee193f24, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bc8ba05622e678641a9496a2a9bc67c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -907,7 +907,7 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 662065928}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7440394a74ef8474993afb9063f0ef5f, type: 3}
@@ -1879,7 +1879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 298477073}
   speed: 10
-  deadZoneRadius: 0.1
+  deadZoneRadius: 0.2
   circle: {fileID: 1132996496}
   outerCircle: {fileID: 197990173}
   myCamera: {fileID: 519420031}

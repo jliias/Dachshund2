@@ -96,7 +96,7 @@ public class Joystick : MonoBehaviour
             moveCharacter(direction * 1.5f);
 
             // Move inner circle to new position
-            circle.transform.position = new Vector2(pointA.x + direction.x, pointA.y + direction.y) * 1;
+            circle.transform.position = new Vector2(pointA.x + direction.x * 0.5f, pointA.y + direction.y * 0.5f) * 1f;
         }
         else
         {
