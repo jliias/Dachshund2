@@ -24,6 +24,14 @@ public class Joystick : MonoBehaviour
 
     public Camera myCamera;
 
+    private float aspectRatio;
+
+    private void Start()
+    {
+        aspectRatio = myCamera.aspect;
+        Debug.Log("aspect: " + aspectRatio);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -75,13 +83,16 @@ public class Joystick : MonoBehaviour
                 direction.x = 0f;
             }
 
+            // Take screen aspect ratio into account when calculating
+            // vertical movement: It just feels too fast if speed is not
+            // scaled. Still to be tested if this is correct way to do it. 
             if (offset.y < -deadZoneRadius)
             {
-                direction.y = -1f;
+                direction.y = -1f / aspectRatio;
             }
             else if (offset.y > deadZoneRadius)
             {
-                direction.y = 1f;
+                direction.y = 1f / aspectRatio;
             }
             else
             {
@@ -96,7 +107,8 @@ public class Joystick : MonoBehaviour
             moveCharacter(direction * 1.5f);
 
             // Move inner circle to new position
-            circle.transform.position = new Vector2(pointA.x + direction.x * 0.5f, pointA.y + direction.y * 0.5f) * 1f;
+            circle.transform.position = new Vector2(pointA.x + direction.x * 0.5f, pointA.y + direction.y * 0.5f * aspectRatio) * 1f;
+
         }
         else
         {
