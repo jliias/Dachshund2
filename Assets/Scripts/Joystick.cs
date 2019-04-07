@@ -16,7 +16,10 @@ public class Joystick : MonoBehaviour
     private bool touchStart = false;
     private Vector2 pointA;
     private Vector2 pointB;
-    public float deadZoneRadius = 0.1f;
+
+    // variables used for defining dead zone for joystick
+    private float deadZoneMultiplier = 2f;
+    private float deadZoneRadius;
 
     // circles to build a joystick object
     public Transform circle;
@@ -25,11 +28,29 @@ public class Joystick : MonoBehaviour
     public Camera myCamera;
 
     private float aspectRatio;
+    private float screenWidthInch;
 
     private void Start()
     {
+        // Aspect ratio and screen width (in inches) are used for finetuning
+        // joystick sensitivity
         aspectRatio = myCamera.aspect;
+        screenWidthInch = Screen.width / Screen.dpi;
+
+        // Calculate deadzone radius based on screen width.
+        // It's accurate enough for this
+        // Also, limit deadzone between 0.2-0.5 screen units
+        deadZoneRadius = deadZoneMultiplier / screenWidthInch;
+        if (deadZoneRadius > 0.5f) {
+            deadZoneRadius = 0.5f;
+        } else if (deadZoneRadius < 0.2f) {
+            deadZoneRadius = 0.2f;
+        }
+
+        // Some debug info for developer
         Debug.Log("aspect: " + aspectRatio);
+        Debug.Log("Screen width: " + screenWidthInch);
+        Debug.Log("deadZoneRadius: " + deadZoneRadius);
     }
 
     // Update is called once per frame
@@ -63,13 +84,15 @@ public class Joystick : MonoBehaviour
         {
             // Calculate offset between touch start and current position
             Vector2 offset = pointB - pointA;
-            Debug.Log("offset: " + offset);
+            //Debug.Log("offset: " + offset);
 
             // "Analog" control
             //Vector2 direction = Vector2.ClampMagnitude(offset, 1.0f);
             
             // Try "digital" joystick instead
             // Current implementation limits movement to 45 degrees "slices"
+            // Also, there is a "dead zone" around center position of joystick
+            // to make touch screen steering less sensitive. 
             Vector2 direction;
             if (offset.x < -deadZoneRadius)
             {
@@ -102,7 +125,7 @@ public class Joystick : MonoBehaviour
             // Clamp movement vector length to 1.0f
             direction = Vector2.ClampMagnitude(direction, 1.0f);
 
-            Debug.Log("direction: " + direction);
+            //Debug.Log("direction: " + direction);
 
             moveCharacter(direction * 1.5f);
 

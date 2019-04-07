@@ -900,14 +900,14 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &662065929
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 662065928}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7440394a74ef8474993afb9063f0ef5f, type: 3}
@@ -1879,7 +1879,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 298477073}
   speed: 10
-  deadZoneRadius: 0.2
   circle: {fileID: 1132996496}
   outerCircle: {fileID: 197990173}
   myCamera: {fileID: 519420031}
